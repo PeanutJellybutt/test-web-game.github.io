@@ -55,7 +55,10 @@ export default {
   build: {
 
   },
-
+  target: 'static',
+  router: {
+    base: 'https://yanimoo.github.io/test-web-game/'
+  },
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
