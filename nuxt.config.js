@@ -57,7 +57,7 @@ export default {
   },
   target: 'static',
   router: {
-    base: '/'
+    base: '/test-web-game/'
   },
   render: {
     bundleRenderer: {
