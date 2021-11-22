@@ -15,11 +15,11 @@ export default {
       { charset: 'utf-8' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' } 
+      { rel: 'icon', type: 'image/x-icon', href: '/test-web-game/favicon.ico' } 
     ],
     script: [
       {
-        src: "/html5game/Garfield_211117_HTML5.js?PNSYB=1950136096"
+        src: "/test-web-game/html5game/Garfield_211117_HTML5.js?PNSYB=1950136096"
       }
     ]
   },
