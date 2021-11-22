@@ -26,7 +26,7 @@ body {
   margin: 0px;
   padding: 0px;
   border: 0px;
-  background: #0;
+  background: white;
 }
 canvas {
   image-rendering: optimizeSpeed;

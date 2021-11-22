@@ -1,35 +1,43 @@
 <template>
-  <b-container>
-    <b-row>
-      <b-col>
-        Garfield Game
-        <client-only>
-          <!-- <Game /> -->
-          <div class="gm4html5_div_class" id="gm4html5_div_id">
-            <!-- Create the canvas element the game draws to -->
-            <b-aspect :aspect="16/9">
-              <canvas id="canvas" class="canvas">
-            <!-- <canvas id="canvas" width="1024" height="576" > -->
-                <p>Your browser doesn't support HTML5 canvas. </p>
-              </canvas>
-            </b-aspect>
-          </div>
-        </client-only>
-      </b-col>
-    </b-row>
-  </b-container>
+  <div class="panel-wrap">
+    <client-only>
+      <div class="gm4html5_div_class" id="gm4html5_div_id">
+        <div class="btns">
+          <b-button
+            v-if="isFullScreen"
+            variant="link"
+            @click="closeFullscreen"
+            id="btnCompress"
+          >
+            <font-awesome-icon icon="compress" />
+          </b-button>
+          <b-button
+            v-else
+            variant="link"
+            @click="openFullscreen"
+            id="btnExpand"
+          >
+            <font-awesome-icon icon="expand" />
+          </b-button>
+        </div>
+        <b-aspect :aspect="16 / 9">
+          <canvas id="canvas" class="canvas">
+            <p>Your browser doesn't support HTML5 canvas.</p>
+          </canvas>
+        </b-aspect>
+      </div>
+    </client-only>
+  </div>
 </template>
 
 <script>
-// import Game from "@/components/game/index";
-
 export default {
   name: "HomePage",
-  components: {
-    // Game
-  },
+  components: {},
   data() {
-    return {};
+    return {
+      isFullScreen: false,
+    };
   },
   // <client-only>
 
@@ -98,13 +106,38 @@ export default {
   //       });
   //   },
   created: async function () {
-    // if (process.client) {
-    //   window.onload = GameMaker_Init;
-    // }
-  //     this.urlkey = this.$route.params.urlkey;
-  //     await this.getDatas();
+   
   },
   methods: {
+    openFullscreen: async function () {
+      if (process.client) {
+        var elem = document.getElementById("gm4html5_div_id");
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+          /* Safari */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          /* IE11 */
+          elem.msRequestFullscreen();
+        }
+        this.isFullScreen = true;
+      }
+    },
+    closeFullscreen: async function () {
+      if (process.client) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          /* Safari */
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+          /* IE11 */
+          document.msExitFullscreen();
+        }
+        this.isFullScreen = false;
+      }
+    },
     // getDatas: async function () {
     //   if (process.client) {
     //     await this.$axios
@@ -125,8 +158,26 @@ export default {
 </script>
 
 <style scoped>
+.panel-wrap{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
 .canvas {
   width: 100%;
   height: 100%;
+}
+.gm4html5_div_class {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.btns {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 1.5rem;
+  color: gray !important;
+  z-index: 500;
 }
 </style>

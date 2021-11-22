@@ -32,7 +32,8 @@ export default {
 
   plugins: [
     { src: '~/plugins/axios.js', ssr: true },
-    { src: '~/plugins/game.js', ssr: false }
+    { src: '~/plugins/game.js', ssr: false },
+    { src: "~/plugins/icon.js" },
   ],
 
   components: true,
