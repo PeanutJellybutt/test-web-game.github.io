@@ -57,7 +57,7 @@ export default {
   },
   target: 'static',
   router: {
-    base: 'https://yanimoo.github.io/test-web-game/'
+    base: '/'
   },
   render: {
     bundleRenderer: {
