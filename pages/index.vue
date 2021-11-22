@@ -10,7 +10,7 @@
             <b-aspect :aspect="16/9">
               <canvas id="canvas" class="canvas">
             <!-- <canvas id="canvas" width="1024" height="576" > -->
-                <p>Your browser doesn't support HTML5 canvas.</p>
+                <p>Your browser doesn't support HTML5 canvas. </p>
               </canvas>
             </b-aspect>
           </div>
