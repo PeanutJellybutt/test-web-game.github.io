@@ -19,7 +19,7 @@ export default {
     ],
     script: [
       {
-        src: "/test-web-game/html5game/Garfield_211117_HTML5.js?PNSYB=1950136096"
+        src: "/test-web-game/html5game/Garfield_211117_HTML5.js?EVCAC=1401519994"
       }
     ]
   },
