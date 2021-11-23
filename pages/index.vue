@@ -113,10 +113,12 @@ export default {
 }
 .canvas {
   width: 100%;
+  max-height: 100vh;
 }
 .gm4html5_div_class {
   position: relative;
   width: 100%;
+  max-height: 100vh;
 }
 .btns {
   position: absolute;
