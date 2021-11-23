@@ -20,11 +20,11 @@
             <font-awesome-icon icon="expand" />
           </b-button>
         </div>
-        <b-aspect :aspect="16 / 9">
+        <!-- <b-aspect :aspect="16/9"> -->
           <canvas id="canvas" class="canvas">
             <p>Your browser doesn't support HTML5 canvas.</p>
           </canvas>
-        </b-aspect>
+        <!-- </b-aspect> -->
       </div>
     </client-only>
   </div>
@@ -107,15 +107,16 @@ export default {
 
 <style scoped>
 .panel-wrap{
-  background-color: #000;
   position: relative;
+  max-width: 100%;
   height: 100vh;
 }
 .canvas {
-  width: 100vw;
+  width: 100%;
 }
 .gm4html5_div_class {
   position: relative;
+  width: 100%;
 }
 .btns {
   position: absolute;
