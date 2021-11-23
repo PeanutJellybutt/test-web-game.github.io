@@ -54,7 +54,9 @@ export default {
   //       });
   //   },
   created: async function () {
-   
+    if (process.client) {
+      window.scrollTo(0, 1);
+    }
   },
   methods: {
     openFullscreen: async function () {
