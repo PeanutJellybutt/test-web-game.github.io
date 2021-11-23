@@ -1,25 +1,25 @@
 <template>
   <div class="panel-wrap d-flex align-items-center">
     <client-only>
+      <div class="btns">
+        <b-button
+          v-if="isFullScreen"
+          variant="link"
+          @click="closeFullscreen"
+          id="btnCompress"
+        >
+          <font-awesome-icon icon="compress" />
+        </b-button>
+        <b-button
+          v-else
+          variant="link"
+          @click="openFullscreen"
+          id="btnExpand"
+        >
+          <font-awesome-icon icon="expand" />
+        </b-button>
+      </div>
       <div class="gm4html5_div_class" id="gm4html5_div_id">
-        <div class="btns">
-          <b-button
-            v-if="isFullScreen"
-            variant="link"
-            @click="closeFullscreen"
-            id="btnCompress"
-          >
-            <font-awesome-icon icon="compress" />
-          </b-button>
-          <b-button
-            v-else
-            variant="link"
-            @click="openFullscreen"
-            id="btnExpand"
-          >
-            <font-awesome-icon icon="expand" />
-          </b-button>
-        </div>
         <!-- <b-aspect :aspect="16/9"> -->
           <canvas id="canvas" class="canvas">
             <p>Your browser doesn't support HTML5 canvas.</p>

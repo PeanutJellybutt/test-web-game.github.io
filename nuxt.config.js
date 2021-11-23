@@ -7,11 +7,11 @@ export default {
     meta: [
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { 'http-equiv': 'pragma', content: 'no-cache' },
-      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      // { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+      // { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
       { charset: 'utf-8' }
     ],
     link: [
