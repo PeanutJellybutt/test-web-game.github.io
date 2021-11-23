@@ -39,58 +39,6 @@ export default {
       isFullScreen: false,
     };
   },
-  // <client-only>
-
-  // if (process.client) {
-
-  //   metaInfo() {
-  //     return {
-  //       title: this.info.nameTh,
-  //       titleTemplate: "%s : Garfield",
-  //     };
-  //   },
-  //   head() {
-  //     return {
-  //       title: this.info.nameTh,
-  //       titleTemplate: "%s : Garfield",
-  //       meta: [
-  //         {
-  //           property: "og:locale",
-  //           content: "th_TH",
-  //         },
-  //         {
-  //           hid: "og:type",
-  //           property: "og:type",
-  //           content: "article",
-  //         },
-  //         {
-  //           property: "og:url",
-  //           content: "https://Garfield.com",
-  //         },
-  //         {
-  //           hid: "og:site_name",
-  //           property: "og:site_name",
-  //           content: "Garfield.com",
-  //         },
-  //         {
-  //           name: "title",
-  //           content: `${this.info.nameTh} : Garfield`,
-  //         },
-  //         {
-  //           name: "Keyword",
-  //           content: "Garfield",
-  //         },
-  //         {
-  //           name: "og:title",
-  //           content: `${this.info.nameTh} : Garfield`,
-  //         },
-  //         {
-  //           property: "og:image",
-  //           content: this.info.imageUrl || "",
-  //         },
-  //       ],
-  //     };
-  //   },
   //   asyncData({ params, $axios, redirect }) {
   //     return $axios
   //       .get(`${process.env.BASE_URL}/employee/${encodeURI(params.urlkey)}`)
