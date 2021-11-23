@@ -55,9 +55,7 @@ export default {
   //   },
   created: async function () {
     if (process.client) {
-      setTimeout(function(){ 
-        window.scrollTo(0, 1);
-      }, 2000);
+      
     }
   },
   methods: {
