@@ -1,5 +1,5 @@
 <template>
-  <div class="panel-wrap">
+  <div class="panel-wrap d-flex align-items-center">
     <client-only>
       <div class="gm4html5_div_class" id="gm4html5_div_id">
         <div class="btns">
@@ -159,25 +159,24 @@ export default {
 
 <style scoped>
 .panel-wrap{
+  background-color: #000;
   position: relative;
-  width: 100vw;
   height: 100vh;
 }
 .canvas {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
 }
 .gm4html5_div_class {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
 .btns {
   position: absolute;
   right: 0;
   bottom: 0;
-  font-size: 1.5rem;
-  color: gray !important;
   z-index: 500;
+}
+.btns svg{
+  color: gray !important;
+  font-size: 1.5rem;
 }
 </style>
