@@ -1,7 +1,7 @@
 <template>
   <div :class="[
       'panel-wrap d-flex align-items-center justify-content-center ', 
-      this.$store.state.screenSize.width < this.$store.state.screenSize.height ? 'horizontal' : '' 
+      this.$store.state.screenSize.width < this.$store.state.screenSize.height ? 'horizontal' : 'vertical' 
     ]">
     <client-only>
       <!-- <div class="btns">
@@ -144,27 +144,23 @@ export default {
 .horizontal .canvas {
   max-width: 100vh;
   max-height: 100vw;
-  height: 100vw;
   width: calc(100vw / 9 * 16) !important;
 }
 .horizontal .gm4html5_div_class {
   transform: rotate(90deg);
   transform-origin:center ;
 }
-/* @media (max-width: 991.98px) and (orientation: landscape) {
-  .panel-wrap{
-    height: calc(100vh - 56px);
-  }
+@media (max-width: 991.98px) and (orientation: landscape) {
   .canvas {
-    max-height: calc(100vh - 56px);
+    height: calc(100vw / 16 * 9);
   }
 }
 @media (max-width: 991.98px) { 
   .panel-wrap.horizontal {
-    height: calc(100vh - 56px);
+    /* height: calc(100vh - 56px); */
   }
   .horizontal .canvas {
-    max-height: calc(100vh - 56px);
+    /* max-height: calc(100vh - 56px); */
   }
-} */
+}
 </style>
