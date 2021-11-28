@@ -131,16 +131,22 @@ export default {
   color: gray !important;
   font-size: 1.5rem;
 }
+.horizontal .canvas {
+  max-width: 100vh;
+  max-height: 100vw;
+  height: 100vw;
+  width: calc(100vw / 9 * 16) !important;
+}
+.horizontal .gm4html5_div_class {
+  transform: rotate(90deg);
+  transform-origin:center ;
+}
 @media (max-width: 991.98px) { 
-  .horizontal .canvas {
-    max-width: 100vh;
-    max-height: 100vw;
-    height: 100vw;
-    width: calc(100vw / 9 * 16) !important;
+  .panel-wrap.horizontal {
+    height: calc(100vh - 56px);
   }
-  .horizontal .gm4html5_div_class {
-    transform: rotate(90deg);
-    transform-origin:center ;
+  .horizontal .canvas {
+    max-height: calc(100vh - 56px);
   }
 }
 </style>
