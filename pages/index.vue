@@ -1,5 +1,8 @@
 <template>
-  <div :class="['panel-wrap d-flex align-items-center justify-content-center ', this.$store.state.screenSize.width < this.$store.state.screenSize.height ? 'horizontal' : '' ]">
+  <div :class="[
+      'panel-wrap d-flex align-items-center justify-content-center ', 
+      this.$store.state.screenSize.width < this.$store.state.screenSize.height ? 'horizontal' : '' 
+    ]">
     <client-only>
       <!-- <div class="btns">
         <b-button
@@ -140,6 +143,14 @@ export default {
 .horizontal .gm4html5_div_class {
   transform: rotate(90deg);
   transform-origin:center ;
+}
+@media screen and (orientation: landscape) {
+  .panel-wrap{
+    height: calc(100vh - 56px);
+  }
+  .canvas {
+    max-height: calc(100vh - 56px);
+  }
 }
 @media (max-width: 991.98px) { 
   .panel-wrap.horizontal {
