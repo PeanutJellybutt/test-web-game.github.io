@@ -1,5 +1,5 @@
 <template>
-  <div class="panel-wrap d-flex align-items-center justify-content-center">
+  <div class="panel-wrap d-flex align-items-start justify-content-center">
     <!-- <span class="text-white" style="position:absolute;z-index: 500;left: 0;top: 0;">{{cW}} {{iW }} {{cH}} {{iH}} | {{ww ? "w+": "w-"}} {{hh ? "h+": "h-"}}</span> -->
     <client-only>
       <!-- <div class="btns">
@@ -60,19 +60,23 @@ export default {
       this.cH = document.getElementById("gm4html5_div_id").clientHeight;
       this.iH = window.innerHeight;
 
+      if(this.iH > this.iW){
+        alert("Please use Landscape!");
+        window.orientation
+      }
+
+
       if (this.cW > this.iW) {
         this.ww = true;
       }
       if (this.cH > this.iH) {
         this.hh = true;
-        // document.getElementById("gm4html5_div_id").style.height = `100%`;
-        // document.getElementById("canvas").style.height = `100%`;
 
-        document.getElementById("gm4html5_div_id").style.maxHeight = `100vh`;
-        document.getElementById("canvas").style.maxHeight = `100vh`;
-        document.getElementById("gm4html5_div_id").style.width = `${(this.iH / 9) * 16}px`;
-        document.getElementById("canvas").style.width = `auto`;
-        document.getElementById("canvas").style.height = `100vh`;
+        // document.getElementById("gm4html5_div_id").style.maxHeight = `100vh`;
+        // document.getElementById("canvas").style.maxHeight = `100vh`;
+        // document.getElementById("gm4html5_div_id").style.width = `${(this.iH / 9) * 16}px`;
+        // document.getElementById("canvas").style.width = `auto`;
+        // document.getElementById("canvas").style.height = `calc(100vh - 56px)`;
       }
 
     }
@@ -132,13 +136,13 @@ export default {
   max-width: 100%;
   height: 100vh;
 }
-.canvas {
+/* .canvas {
   width: 100%;
 }
 .gm4html5_div_class {
   position: relative;
   width: 100%;
-}
+} */
 .btns {
   position: absolute;
   right: 0;
