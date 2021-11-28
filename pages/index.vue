@@ -40,6 +40,10 @@ export default {
   data() {
     return {
       isFullScreen: false,
+      cW: 0,
+      iW: 0,
+      cH: 0,
+      iH: 0,
     };
   },
   //   asyncData({ params, $axios, redirect }) {
@@ -56,11 +60,14 @@ export default {
   //         redirect(`/404`);
   //       });
   //   },
-  created: async function () {
-    if (process.client) {
-      
-    }
-  },
+  // mounted: async function () {
+  //   if (process.client) {
+  //     this.cW = document.getElementById("gm4html5_div_id").clientWidth;
+  //     this.iW = window.innerWidth;
+  //     this.cH = document.getElementById("gm4html5_div_id").clientHeight;
+  //     this.iH = window.innerHeight;
+  //   }
+  // },
   methods: {
     openFullscreen: async function () {
       if (process.client) {
@@ -144,7 +151,7 @@ export default {
   transform: rotate(90deg);
   transform-origin:center ;
 }
-@media (max-width: 991.98px) and (orientation: landscape) {
+/* @media (max-width: 991.98px) and (orientation: landscape) {
   .panel-wrap{
     height: calc(100vh - 56px);
   }
@@ -159,5 +166,5 @@ export default {
   .horizontal .canvas {
     max-height: calc(100vh - 56px);
   }
-}
+} */
 </style>
