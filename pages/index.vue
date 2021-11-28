@@ -1,7 +1,8 @@
 <template>
-  <div class="panel-wrap d-flex align-items-center">
+  <div class="panel-wrap d-flex align-items-center justify-content-center">
+    <span class="text-white" style="position:absolute;z-index: 500;left: 0;top: 0;">{{cW}} {{iW }} {{cH}} {{iH}} | {{ww ? "w+": "w-"}} {{hh ? "h+": "h-"}}</span>
     <client-only>
-      <div class="btns">
+      <!-- <div class="btns">
         <b-button
           v-if="isFullScreen"
           variant="link"
@@ -10,21 +11,14 @@
         >
           <font-awesome-icon icon="compress" />
         </b-button>
-        <b-button
-          v-else
-          variant="link"
-          @click="openFullscreen"
-          id="btnExpand"
-        >
+        <b-button v-else variant="link" @click="openFullscreen" id="btnExpand">
           <font-awesome-icon icon="expand" />
         </b-button>
-      </div>
+      </div> -->
       <div class="gm4html5_div_class" id="gm4html5_div_id">
-        <!-- <b-aspect :aspect="16/9"> -->
-          <canvas id="canvas" class="canvas">
-            <p>Your browser doesn't support HTML5 canvas.</p>
-          </canvas>
-        <!-- </b-aspect> -->
+        <canvas id="canvas" class="canvas">
+          <p>Your browser doesn't support HTML5 canvas.</p>
+        </canvas>
       </div>
     </client-only>
   </div>
@@ -37,6 +31,12 @@ export default {
   data() {
     return {
       isFullScreen: false,
+      cW: 0,
+      iW: 0,
+      cH: 0,
+      iH: 0,
+      ww: false,
+      hh: false,
     };
   },
   //   asyncData({ params, $axios, redirect }) {
@@ -53,9 +53,31 @@ export default {
   //         redirect(`/404`);
   //       });
   //   },
-  created: async function () {
+  updated: async function () {
     if (process.client) {
-      
+      this.cW = document.getElementById("gm4html5_div_id").clientWidth;
+      this.iW = window.innerWidth;
+      this.cH = document.getElementById("gm4html5_div_id").clientHeight;
+      this.iH = window.innerHeight;
+
+      if (this.cW > this.iW) {
+        console.log("H", this.cW, this.iW);
+        this.ww = true;
+      }
+      if (this.cH > this.iH) {
+        this.hh = true;
+        console.log("W", this.cH, this.iH);
+        // document.getElementById("gm4html5_div_id").style.height = `100%`;
+        // document.getElementById("canvas").style.height = `100%`;
+
+        
+        document.getElementById("gm4html5_div_id").style.maxHeight = `100vh`;
+        document.getElementById("canvas").style.maxHeight = `100vh`;
+        document.getElementById("gm4html5_div_id").style.width = `${(this.iH / 9) * 16}px`;
+        document.getElementById("canvas").style.width = `${(this.iH / 9) * 16}px`;
+        document.getElementById("canvas").style.height = `100vh`;
+      }
+
     }
   },
   methods: {
@@ -108,19 +130,17 @@ export default {
 </script>
 
 <style scoped>
-.panel-wrap{
+.panel-wrap {
   position: relative;
   max-width: 100%;
   height: 100vh;
 }
 .canvas {
   width: 100%;
-  max-height: 100vh;
 }
 .gm4html5_div_class {
   position: relative;
   width: 100%;
-  max-height: 100vh;
 }
 .btns {
   position: absolute;
@@ -128,7 +148,7 @@ export default {
   bottom: 0;
   z-index: 500;
 }
-.btns svg{
+.btns svg {
   color: gray !important;
   font-size: 1.5rem;
 }
