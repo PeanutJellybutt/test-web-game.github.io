@@ -1,6 +1,5 @@
 <template>
-  <div class="panel-wrap d-flex align-items-start justify-content-center">
-    <!-- <span class="text-white" style="position:absolute;z-index: 500;left: 0;top: 0;">{{cW}} {{iW }} {{cH}} {{iH}} | {{ww ? "w+": "w-"}} {{hh ? "h+": "h-"}}</span> -->
+  <div :class="['panel-wrap d-flex align-items-center justify-content-center ', this.$store.state.screenSize.width < this.$store.state.screenSize.height ? 'horizontal' : '' ]">
     <client-only>
       <!-- <div class="btns">
         <b-button
@@ -11,14 +10,21 @@
         >
           <font-awesome-icon icon="compress" />
         </b-button>
-        <b-button v-else variant="link" @click="openFullscreen" id="btnExpand">
+        <b-button
+          v-else
+          variant="link"
+          @click="openFullscreen"
+          id="btnExpand"
+        >
           <font-awesome-icon icon="expand" />
         </b-button>
       </div> -->
       <div class="gm4html5_div_class" id="gm4html5_div_id">
-        <canvas id="canvas" class="canvas">
-          <p>Your browser doesn't support HTML5 canvas.</p>
-        </canvas>
+        <!-- <b-aspect :aspect="16/9"> -->
+          <canvas id="canvas" class="canvas">
+            <p>Your browser doesn't support HTML5 canvas.</p>
+          </canvas>
+        <!-- </b-aspect> -->
       </div>
     </client-only>
   </div>
@@ -31,12 +37,6 @@ export default {
   data() {
     return {
       isFullScreen: false,
-      cW: 0,
-      iW: 0,
-      cH: 0,
-      iH: 0,
-      ww: false,
-      hh: false,
     };
   },
   //   asyncData({ params, $axios, redirect }) {
@@ -53,32 +53,9 @@ export default {
   //         redirect(`/404`);
   //       });
   //   },
-  updated: async function () {
+  created: async function () {
     if (process.client) {
-      this.cW = document.getElementById("gm4html5_div_id").clientWidth;
-      this.iW = window.innerWidth;
-      this.cH = document.getElementById("gm4html5_div_id").clientHeight;
-      this.iH = window.innerHeight;
-
-      if(this.iH > this.iW){
-        alert("Please use Landscape!");
-        window.orientation
-      }
-
-
-      if (this.cW > this.iW) {
-        this.ww = true;
-      }
-      if (this.cH > this.iH) {
-        this.hh = true;
-
-        // document.getElementById("gm4html5_div_id").style.maxHeight = `100vh`;
-        // document.getElementById("canvas").style.maxHeight = `100vh`;
-        // document.getElementById("gm4html5_div_id").style.width = `${(this.iH / 9) * 16}px`;
-        // document.getElementById("canvas").style.width = `auto`;
-        // document.getElementById("canvas").style.height = `calc(100vh - 56px)`;
-      }
-
+      
     }
   },
   methods: {
@@ -131,26 +108,39 @@ export default {
 </script>
 
 <style scoped>
-.panel-wrap {
+.panel-wrap{
   position: relative;
-  max-width: 100%;
+  width: 100vw;
   height: 100vh;
 }
-/* .canvas {
-  width: 100%;
+.canvas {
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100vw;
 }
 .gm4html5_div_class {
   position: relative;
-  width: 100%;
-} */
+}
 .btns {
   position: absolute;
   right: 0;
   bottom: 0;
   z-index: 500;
 }
-.btns svg {
+.btns svg{
   color: gray !important;
   font-size: 1.5rem;
+}
+@media (max-width: 991.98px) { 
+  .horizontal .canvas {
+    max-width: 100vh;
+    max-height: 100vw;
+    height: 100vw;
+    width: calc(100vw / 9 * 16) !important;
+  }
+  .horizontal .gm4html5_div_class {
+    transform: rotate(90deg);
+    transform-origin:center ;
+  }
 }
 </style>
