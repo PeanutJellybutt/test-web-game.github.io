@@ -1,6 +1,6 @@
 <template>
   <div class="panel-wrap d-flex align-items-center justify-content-center">
-    <span class="text-white" style="position:absolute;z-index: 500;left: 0;top: 0;">{{cW}} {{iW }} {{cH}} {{iH}} | {{ww ? "w+": "w-"}} {{hh ? "h+": "h-"}}</span>
+    <!-- <span class="text-white" style="position:absolute;z-index: 500;left: 0;top: 0;">{{cW}} {{iW }} {{cH}} {{iH}} | {{ww ? "w+": "w-"}} {{hh ? "h+": "h-"}}</span> -->
     <client-only>
       <!-- <div class="btns">
         <b-button
@@ -61,20 +61,17 @@ export default {
       this.iH = window.innerHeight;
 
       if (this.cW > this.iW) {
-        console.log("H", this.cW, this.iW);
         this.ww = true;
       }
       if (this.cH > this.iH) {
         this.hh = true;
-        console.log("W", this.cH, this.iH);
         // document.getElementById("gm4html5_div_id").style.height = `100%`;
         // document.getElementById("canvas").style.height = `100%`;
 
-        
         document.getElementById("gm4html5_div_id").style.maxHeight = `100vh`;
         document.getElementById("canvas").style.maxHeight = `100vh`;
         document.getElementById("gm4html5_div_id").style.width = `${(this.iH / 9) * 16}px`;
-        document.getElementById("canvas").style.width = `${(this.iH / 9) * 16}px`;
+        document.getElementById("canvas").style.width = `auto`;
         document.getElementById("canvas").style.height = `100vh`;
       }
 
