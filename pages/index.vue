@@ -144,7 +144,7 @@ export default {
   transform: rotate(90deg);
   transform-origin:center ;
 }
-@media screen and (orientation: landscape) {
+@media (max-width: 991.98px) and (orientation: landscape) {
   .panel-wrap{
     height: calc(100vh - 56px);
   }
