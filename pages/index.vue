@@ -1,7 +1,7 @@
 <template>
   <div :class="[
       'panel-wrap d-flex align-items-center justify-content-center ', 
-      $store.state.screenSize.width < $store.state.screenSize.height ? 'horizontal' : 'vertical' 
+      this.$store.state.screenSize.width < this.$store.state.screenSize.height ? 'horizontal' : 'vertical' 
     ]">
     <client-only>
       <div style="    position: absolute;
@@ -73,13 +73,6 @@ export default {
       this.cH = document.getElementById("gm4html5_div_id").clientHeight;
       this.iH = window.innerHeight;
     }
-
-    if(this.$store.state.screenSize.width < this.$store.state.screenSize.height){
-      this.iH = this.cW
-    }
-
-      // this.$store.state.screenSize.width < this.$store.state.screenSize.height ? 'horizontal' : 'vertical' 
-    
   },
   methods: {
     openFullscreen: async function () {
