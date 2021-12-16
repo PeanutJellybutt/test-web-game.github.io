@@ -4,6 +4,12 @@
       this.$store.state.screenSize.width < this.$store.state.screenSize.height ? 'horizontal' : 'vertical' 
     ]">
     <client-only>
+      <div style="    position: absolute;
+    color: white;
+    top: 0;
+    left: 0;
+    background-color: black;
+}">cW={{cW}} iW={{iW}} cH={{cH}} iH={{iH}}</div>
       <!-- <div class="btns">
         <b-button
           v-if="isFullScreen"
@@ -60,14 +66,14 @@ export default {
   //         redirect(`/404`);
   //       });
   //   },
-  // mounted: async function () {
-  //   if (process.client) {
-  //     this.cW = document.getElementById("gm4html5_div_id").clientWidth;
-  //     this.iW = window.innerWidth;
-  //     this.cH = document.getElementById("gm4html5_div_id").clientHeight;
-  //     this.iH = window.innerHeight;
-  //   }
-  // },
+  updated: async function () {
+    if (process.client) {
+      this.cW = document.getElementById("gm4html5_div_id").clientWidth;
+      this.iW = window.innerWidth;
+      this.cH = document.getElementById("gm4html5_div_id").clientHeight;
+      this.iH = window.innerHeight;
+    }
+  },
   methods: {
     openFullscreen: async function () {
       if (process.client) {
