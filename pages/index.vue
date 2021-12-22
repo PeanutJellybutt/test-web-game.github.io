@@ -3,8 +3,8 @@
     'panel-wrap d-flex align-items-center justify-content-center'
   ]"> 
         <pre style="position: absolute;color: white;top: 0;left: 0;background-color: black;z-index: 500;opacity: 0.5">
-         {{iW}} {{iH}} {{$device}}</pre>
-  <div :class="['panel-bg-main',  iW > 0 && iW <= 768 ? 'mobile' : 'desktop']" id="panel-bg-main">
+        isDesktop {{$device.isDesktop}}</pre>
+  <div :class="['panel-bg-main', isDesktop]" id="panel-bg-main">
     <div class="gm4html5_div_class" id="gm4html5_div_id">
         <canvas id="canvas" class="canvas">
           <p>Your browser doesn't support HTML5 canvas.</p>
@@ -25,6 +25,11 @@ export default {
       // cH: 0,
       iH: 0,
     };
+  },
+  computed: {
+    isDesktop() {
+      return this.$device.isDesktop  ? 'desktop' : 'mobile';
+    }
   },
   created: async function () {
     if (process.client) {
