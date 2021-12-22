@@ -2,8 +2,8 @@
 <div id="panel-wrap" :class="[
     'panel-wrap d-flex align-items-center justify-content-center', $device.isDesktop ? 'desktop' : 'mobile'
   ]"> 
-        <!-- <div style="position: absolute;color: white;top: 0;left: 0;background-color: black;z-index: 500;">
-         isDesktop={{$device.isDesktop}} cW={{cW}} iW={{iW}} cH={{cH}} iH={{iH}}</div> -->
+        <div style="position: absolute;color: white;top: 0;left: 0;background-color: black;z-index: 500;">
+         isDesktop={{$device}} cW={{cW}} iW={{iW}} cH={{cH}} iH={{iH}}</div>
   <div class="panel-bg-main" id="panel-bg-main">
     <div class="gm4html5_div_class" id="gm4html5_div_id">
         <canvas id="canvas" class="canvas">
