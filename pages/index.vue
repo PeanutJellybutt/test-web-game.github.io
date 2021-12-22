@@ -18,24 +18,20 @@
 
 export default {
   name: "HomePage",
-  components: {},
   data() {
     return {
-      isFullScreen: false,
-      cW: 0,
-      iW: 0,
-      cH: 0,
-      iH: 0,
-      mobile: ""
+      // cW: 0,
+      // iW: 0,
+      // cH: 0,
+      // iH: 0,
     };
   },
   created: async function () {
     if (process.client) {
-      this.iW = window.innerWidth;
-      this.iH = window.innerHeight;
-      this.cW = document.getElementById("panel-bg-main").clientWidth;
-      this.cH = document.getElementById("panel-bg-main").clientHeight;
-
+      // this.iW = window.innerWidth;
+      // this.iH = window.innerHeight;
+      // this.cW = document.getElementById("panel-bg-main").clientWidth;
+      // this.cH = document.getElementById("panel-bg-main").clientHeight;
     }
   },
   methods: {},
