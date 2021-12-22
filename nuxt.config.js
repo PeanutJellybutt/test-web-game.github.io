@@ -1,4 +1,6 @@
 export default {
+  mode: 'universal',
+  target: 'server',
   head: {
     title: 'Garfield',
     htmlAttrs: {
@@ -63,6 +65,11 @@ export default {
   target: 'static',
   router: {
     base: '/test-web-game/'
+  },
+  server: {
+    // host: '0', 
+    host: '0.0.0.0', 
+    timing: false
   },
   render: {
     bundleRenderer: {
