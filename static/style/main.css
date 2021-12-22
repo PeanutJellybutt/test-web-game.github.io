@@ -1,26 +1,3 @@
-@font-face {
-  font-family: "Cordia New";
-  src: url('./../fonts/cordia-new/Cordia New.ttf');
-  font-display: swap;
-}
-@font-face {
-  font-family: "Cordia New Bold";
-  src: url('./../fonts/cordia-new/Cordia New Bold.ttf');
-  font-display: swap; 
-}
-
-@font-face {
-  font-family: "Cordia New Italic";
-  src: url('./../fonts/cordia-new/Cordia New Italic.ttf');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cordia New Bold Italic";
-  src: url('./../fonts/cordia-new/Cordia New Bold Italic.ttf');
-  font-display: swap;
-}
-
 body {
   color:#cccccc;
   margin: 0px;
