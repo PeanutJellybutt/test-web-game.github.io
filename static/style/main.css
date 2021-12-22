@@ -82,7 +82,7 @@ div.gm4html5_login_header
     height: 100vh;
   }
   .mobile .panel-bg-main {
-    padding-bottom: 56.25%;
+    /* padding-bottom: 56.25%; */
     width: 100%;
     height: 100%;
   }
