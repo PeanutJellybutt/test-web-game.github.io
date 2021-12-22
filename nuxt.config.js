@@ -36,6 +36,9 @@ export default {
   modules: [
     'bootstrap-vue/nuxt',
   ],
+  buildModules: [
+    '@nuxtjs/device',
+  ],
 
   build: {
 
