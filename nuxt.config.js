@@ -32,13 +32,14 @@ export default {
 
   components: true,
 
-
   modules: [
     'bootstrap-vue/nuxt',
-  ],
-  buildModules: [
     '@nuxtjs/device',
   ],
+  
+  device: {
+    refreshOnResize: true
+  },
 
   build: {
 
