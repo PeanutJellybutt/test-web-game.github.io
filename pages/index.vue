@@ -20,15 +20,15 @@ export default {
   name: "HomePage",
   data() {
     return {
-      iW: 0,
-      iH: 0,
+      // iW: 0,
+      // iH: 0,
       deviceType: ""
     };
   },
   mounted: async function () {
     if (process.client) {
-      this.iW = window.innerWidth;
-      this.iH = window.innerHeight;
+      // this.iW = window.innerWidth;
+      // this.iH = window.innerHeight;
       // this.cW = document.getElementById("panel-bg-main").clientWidth;
       // this.cH = document.getElementById("panel-bg-main").clientHeight;
       this.deviceType = this.$device.isDesktop ? 'desktop' : 'mobile';

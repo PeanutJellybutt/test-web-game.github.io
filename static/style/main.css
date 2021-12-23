@@ -82,8 +82,8 @@ div.gm4html5_login_header
     position: relative;
   } 
   .desktop #canvas {
-    inset: 39.8% -50% -50% 50% !important;
-    width: calc(100% - 59%);
+    inset: 37.5% -50% -50% 49.35% !important;
+    width: calc(100% - 52%);
   }
 
   .mobile.panel-bg-main {
