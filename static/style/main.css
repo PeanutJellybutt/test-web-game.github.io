@@ -4,6 +4,7 @@ body {
   padding: 0px;
   border: 0px;
   background: black;
+
 }
 canvas {
   image-rendering: optimizeSpeed;
@@ -53,30 +54,40 @@ div.gm4html5_login_header
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 
-  .desktop .pd-bt-16-9 {
-    padding-bottom: 56.25%;
+.parent-panel-bg-main {
+  position: relative;
+} 
+
+  .desktop.parent-panel-bg-main.style-1 {
+    width: calc(100vh / 9 * 16);
+    height: 100%;
+  } 
+  .desktop.parent-panel-bg-main.style-2 {
+    height: calc(100vw / 16 * 9);
+    width: 100%;
+  } 
+  .mobile.parent-panel-bg-main.style-1 {
+    height: calc(100vw / 9 * 16);
+    width: 100%;
+  } 
+  .mobile.parent-panel-bg-main.style-2 {
+    width: calc(100vh / 9 * 16);
+    height: 100%;
   }
-  .desktop.panel-bg-main {
+
+  .desktop .panel-bg-main {
     background-image: url('./../../assets/images/bg-main.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    padding-bottom: 56.25%;
-    width: 100%;
-    position: relative;
-  } 
-  .desktop #canvas {
-    inset: 37.5% -50% -50% 49.35% !important;
-    width: calc(100% - 52%);
-  }
-
-  .mobile.panel-bg-main {
-    padding-bottom: 56.25%;
     width: 100%;
     height: 100%;
+  } 
+  .desktop #canvas {
+    inset: 37.2% -50% -50% 49.35% !important;
+    width: calc(100% - 52%) !important;
   }
   .mobile .canvas {
     width: 100%;
