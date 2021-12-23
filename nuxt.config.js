@@ -21,8 +21,6 @@ export default {
   },
 
   css: [
-    '~/node_modules/bootstrap/dist/css/bootstrap.css',
-    '~/node_modules/bootstrap-vue/dist/bootstrap-vue.css',
     '~/static/style/main.css'
   ],
 
@@ -33,7 +31,6 @@ export default {
   components: true,
 
   modules: [
-    'bootstrap-vue/nuxt',
     '@nuxtjs/device',
   ],
   

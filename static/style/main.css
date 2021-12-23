@@ -56,6 +56,19 @@ div.gm4html5_login_header
   overflow: hidden;
 }
 
+.d-flex {
+  display: -ms-flexbox!important;
+  display: flex!important;
+}
+.align-items-center {
+  -ms-flex-align: center!important;
+  align-items: center!important;
+}
+.justify-content-center {
+  -ms-flex-pack: center!important;
+  justify-content: center!important;
+}
+
   .desktop .pd-bt-16-9 {
     padding-bottom: 56.25%;
   }
