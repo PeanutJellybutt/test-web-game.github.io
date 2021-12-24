@@ -102,4 +102,14 @@ div.gm4html5_login_header
   transform-origin:center;
 
   }
+
+  .panel-bg-greeting {
+    background-image: url('./../../assets/images/GARFIELD-GREETING-BG-JAPANESE.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  } 
+  
   
