@@ -3,8 +3,8 @@
     id="panel-wrap"
     :class="['panel-wrap d-flex align-items-center justify-content-center']"
   >
-    <!-- <pre style="position: absolute;color: white;top: 0;left: 0;background-color: black;z-index: 500;opacity: 1">
-      {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}}</pre> -->
+    <pre style="position: absolute;color: white;top: 0;left: 0;background-color: black;z-index: 500;opacity: 1">
+      {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}}</pre>
     <div id="parent-panel-bg-main" :class="['parent-panel-bg-main', myCustoms ]">
       <div class="panel-bg-main" id="panel-bg-main">
         <div class="gm4html5_div_class" id="gm4html5_div_id">
@@ -40,7 +40,7 @@ export default {
       else
       {
         if(this.iW < this.iH) return 'style-1';
-        else  return 'style-2';
+        else return 'style-2';
       }
     }
   },
