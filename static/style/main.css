@@ -57,7 +57,7 @@ div.gm4html5_login_header
 
 .parent-panel-bg-main {
   position: relative;
-  background-color: violet;
+  /* background-color: violet; */
 } 
 
   .desktop.parent-panel-bg-main.style-1 {
