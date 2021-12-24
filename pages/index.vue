@@ -8,7 +8,7 @@
       {{step}} {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}}</pre>
     <div id="parent-panel-bg-main" :class="['parent-panel-bg-main d-block', myCustoms]">
       <div v-if="step == 1" class="panel-bg-greeting">
-        <b-img src="https://picsum.photos/1024/400/?image=41" width="200"></b-img>
+        <!-- <b-img src="https://picsum.photos/1024/400/?image=41" width="200"></b-img> -->
       </div>
       
       <div :class="['panel-bg-main', step == 1 ? 'd-none' : '' ]" id="panel-bg-main">
