@@ -8,9 +8,9 @@
       {{step}} {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}}</pre>
     <div id="parent-panel-bg-main" :class="['parent-panel-bg-main d-block', myCustoms]">
       <div v-if="step == 1" class="panel-bg-greeting"></div>
-      <b-img id="img-char" :src="img1" width="200" />
-      <b-img id="img-hand" :src="imgGarfieldHands" width="200" />
-      <b-img id="img-garfield" :src="imgGarfield" width="200" />
+      <b-img v-if="step == 1" id="img-char" :src="img1" width="200" />
+      <b-img v-if="step == 1" id="img-hand" :src="imgGarfieldHands" width="200" />
+      <b-img v-if="step == 1" id="img-garfield" :src="imgGarfield" width="200" />
 
       <div :class="['panel-bg-main', step == 1 ? 'd-none' : '' ]" id="panel-bg-main">
         <div class="gm4html5_div_class" id="gm4html5_div_id">
