@@ -7,12 +7,11 @@
     <pre style="position: absolute;color: white;top: 0;left: 0;background-color: black;z-index: 500;opacity: 1">
       {{step}} {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}}</pre>
     <div id="parent-panel-bg-main" :class="['parent-panel-bg-main d-block', myCustoms]">
-      <div v-if="step == 1" class="panel-bg-greeting">
-        <b-img :src="img1" width="200"></b-img>
-        <b-img :src="imgGarfieldHands" width="200"></b-img>
-        <b-img :src="imgGarfield" width="200"></b-img>
-      </div>
-      
+      <div v-if="step == 1" class="panel-bg-greeting"></div>
+      <b-img id="img-char" :src="img1" width="200" />
+      <b-img id="img-hand" :src="imgGarfieldHands" width="200" />
+      <b-img id="img-garfield" :src="imgGarfield" width="200" />
+
       <div :class="['panel-bg-main', step == 1 ? 'd-none' : '' ]" id="panel-bg-main">
         <div class="gm4html5_div_class" id="gm4html5_div_id">
           <canvas id="canvas" class="canvas">
@@ -44,6 +43,7 @@ export default {
       img2: img2,
       imgGarfieldHands: imgGarfieldHands,
       imgGarfield: imgGarfield,
+      deg: 90
     };
   },
   computed: {
@@ -64,11 +64,23 @@ export default {
     if (process.client) {
       this.iW = window.innerWidth;
       this.iH = window.innerHeight;
+      this.deviceType = this.$device.isDesktop ? 'desktop' : 'mobile';
+
+      document.getElementsByTagName("body")[0].setAttribute("id", "body");
+      var body = document.getElementById('body');
+
+      if(this.iW < this.iH && this.deviceType == "mobile") {
+        body.style.webkitTransform = 'rotate('+this.deg+'deg)'; 
+        body.style.mozTransform    = 'rotate('+this.deg+'deg)'; 
+        body.style.msTransform     = 'rotate('+this.deg+'deg)'; 
+        body.style.oTransform      = 'rotate('+this.deg+'deg)'; 
+        body.style.transform       = 'rotate('+this.deg+'deg)'; 
+      }
+
       // this.cW = document.getElementById("panel-bg-main").clientWidth;
       // this.cH = document.getElementById("panel-bg-main").clientHeight;
-      this.deviceType = this.$device.isDesktop ? 'desktop' : 'mobile';
-      var element = await document.getElementById("parent-panel-bg-main");
-      element.classList.add(this.deviceType);
+      // var element = await document.getElementById("parent-panel-bg-main");
+      document.getElementById('body').classList.add(this.deviceType);
     }
   },
   methods: {},

@@ -3,7 +3,16 @@ body {
   margin: 0px;
   padding: 0px;
   border: 0px;
-  background: black;
+  background: rgb(1, 15, 58);
+  width: 100vh;
+  height: 100vw;
+  overflow: hidden;
+}
+body.mobile {
+  transform-origin: center;
+  position: absolute;
+  top: 27%;
+  left: -52%;
 }
 canvas {
   image-rendering: optimizeSpeed;
@@ -48,36 +57,42 @@ div.gm4html5_login_header
   height: 100%;
 }
 
-
-.panel-wrap{
+.panel-wrap {
   position: relative;
   width: 100vw;
   height: 100vh;
 }
 
-canvas{
-  position: absolute;
+.mobile .panel-wrap {
+  width: 100vh;
+  height: 100vw;
+  background-color: rgb(17, 0, 250);
+}
+
+canvas {
+  /* position: absolute; */
   /* transform: translate(-50%, -50%); */
 }
 .parent-panel-bg-main {
   position: relative;
   background-color: violet;
+  height: 100%;
+  width: 100%;
 } 
 
-  .desktop.parent-panel-bg-main.style-1 {
+  .desktop .parent-panel-bg-main.style-1 {
     width: calc(100vh / 9 * 16);
     height: 100%;
   } 
-  .desktop.parent-panel-bg-main.style-2 {
+  .desktop .parent-panel-bg-main.style-2 {
     height: calc(100vw / 16 * 9);
     width: 100%;
   } 
-  .mobile.parent-panel-bg-main.style-1 {
-    height: calc(100vw / 9 * 16);
-    width: 100%;
-    overflow: hidden;
+  .mobile .parent-panel-bg-main.style-1 {
+    height: 100vw;
+    width: calc(100vw / 9 * 16);
   } 
-  .mobile.parent-panel-bg-main.style-2 {
+  .mobile .parent-panel-bg-main.style-2 {
     width: calc(100vh / 9 * 16);
     height: 100%;
   }
@@ -94,15 +109,24 @@ canvas{
     top: 13.5% !important;
     left: 25.35% !important;
     width: calc(100% - 52%) !important;
+    position: absolute;
   }
   .mobile .canvas {
-    width: 100vh;
-    height: 100vw;
-    transform: rotate(90deg);
+    /* width: 100vw;
+    height: 100vh; */
+    /* transform: rotate(90deg);
     transform-origin: center;
     position: absolute;
     left: -52%;
-    top: 21.75%;
+    top: 21.75%; */
+    /* top: -25.5% !important;
+    left: 0 !important; */
+    /* width: calc(100vh) !important; */
+    /* margin-top: 32.5%; */
+    /* height: calc(100vw) !important; */
+    margin-top: 29.25%;
+    height: 100vw;
+    width: calc(100vw / 9 * 16);
   }
 
   .panel-bg-greeting {
@@ -115,11 +139,158 @@ canvas{
   } 
   
   .mobile .panel-bg-greeting {
-    width: 100vh;
-    height: 100vw;
-    transform: rotate(90deg);
+    width: 100%;
+    height: 100%;
+    /* transform: rotate(90deg);
     transform-origin: center;
     position: absolute;
     left: -52%;
-    top: 21.75%;
+    top: 21.75%; */
+  }
+
+
+
+
+
+  .desktop #img-char {
+    position:absolute;
+    width: 25%;
+    top: 35%;
+    left: 17%;
+    z-index: 1;
+  }
+
+  .desktop #img-hand {
+    position:absolute;
+    width: 25%;
+    top: 17%;
+    left: 19%;
+    z-index: 2;
+    animation: handShowUp 4s;
+  }
+
+  @keyframes handShowUp {
+    0% { 
+      opacity: 0;
+      margin-top: 20vh;
+    }
+    84% { 
+      opacity:0;  
+    }
+    85% { 
+      opacity: 1;
+      margin-top: 21vh;
+      animation-timing-function: ease-in;
+    } 
+    95% {
+      margin-top: 13vh;
+      animation-timing-function: ease-in;
+    }
+    100% {
+      margin-top: 16vh;
+      animation-timing-function: ease-in;
+    }
+  }
+
+  .desktop #img-garfield {
+    position:absolute;
+    width: 25%;
+    top: 6%;
+    left: 22%;
+    z-index: 0;
+    animation: moveFromBottom 5s;
+  }
+
+  @keyframes moveFromBottom {
+    0% { 
+      margin-top: 30vh;
+      opacity: 0;
+    }
+    90% { 
+      margin-top: 30vh;
+      opacity: 0;
+    }
+    91% {
+      opacity: 1;
+    }
+    100% {
+      margin-top: 6vh;
+      opacity: 1;
+    }
+  }
+
+
+
+
+  .mobile #img-char {
+    position: absolute;
+    top: 41%;
+    width: 20%;
+    left: 22%;
+    z-index: 3;
+  }
+
+  .mobile #img-hand {
+    position: absolute;
+    top: 41%;
+    width: 20%;
+    left: 24%;
+    z-index: 2;
+    animation: handShowUpMobile 4s !important;
+  }
+
+  @keyframes handShowUpMobile {
+    0% { 
+      opacity: 0;
+      top: 41%;
+    }
+    84% { 
+      z-index: 4;
+      opacity:0;  
+    }
+    85% { 
+      top: 37%;
+      opacity: 1;
+      animation-timing-function: ease-in;
+      z-index: 4;
+    } 
+    95% {
+      top: 25%;
+      animation-timing-function: ease-in;
+      opacity: 1;
+      z-index: 4;
+    }
+    100% {
+      top: 27%;
+      opacity: 1;
+      animation-timing-function: ease-in;
+      z-index: 4;
+    }
+  }
+
+  .mobile #img-garfield {
+    position:absolute;
+    top: 41%;
+    width: 20%;
+    left: 24%;
+    z-index: 0; 
+    animation: moveFromBottomMobile 5s;
+  }
+
+  @keyframes moveFromBottomMobile {
+    0% { 
+      margin-top: 30vh;
+      opacity: 0;
+    }
+    90% { 
+      margin-top: 30vh;
+      opacity: 0;
+    }
+    91% {
+      opacity: 1;
+    }
+    100% {
+      margin-top: 6vh;
+      opacity: 1;
+    }
   }
