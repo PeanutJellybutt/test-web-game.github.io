@@ -55,9 +55,13 @@ div.gm4html5_login_header
   height: 100vh;
 }
 
+canvas{
+  position: absolute;
+  /* transform: translate(-50%, -50%); */
+}
 .parent-panel-bg-main {
   position: relative;
-  /* background-color: violet; */
+  background-color: violet;
 } 
 
   .desktop.parent-panel-bg-main.style-1 {
@@ -87,7 +91,8 @@ div.gm4html5_login_header
     height: 100%;
   } 
   .desktop #canvas {
-    inset: 37.2% -50% -50% 49.35% !important;
+    top: 13.5% !important;
+    left: 25.35% !important;
     width: calc(100% - 52%) !important;
   }
   .mobile .canvas {
@@ -112,4 +117,12 @@ div.gm4html5_login_header
     height: 100%;
   } 
   
-  
+  .mobile .panel-bg-greeting {
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(90deg);
+    transform-origin: center;
+    position: absolute;
+    left: -52%;
+    top: 21.75%;
+  }
