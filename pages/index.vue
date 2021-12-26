@@ -8,7 +8,9 @@
       {{step}} {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}}</pre>
     <div id="parent-panel-bg-main" :class="['parent-panel-bg-main d-block', myCustoms]">
       <div v-if="step == 1" class="panel-bg-greeting">
-        <!-- <b-img src="https://picsum.photos/1024/400/?image=41" width="200"></b-img> -->
+        <b-img :src="img1" width="200"></b-img>
+        <b-img :src="imgGarfieldHands" width="200"></b-img>
+        <b-img :src="imgGarfield" width="200"></b-img>
       </div>
       
       <div :class="['panel-bg-main', step == 1 ? 'd-none' : '' ]" id="panel-bg-main">
@@ -23,6 +25,10 @@
 </template>
 
 <script>
+import img1 from "./../assets/images/JAPANESE.png"
+import img2 from "./../assets/images/CHINESE.png"
+import imgGarfieldHands from "./../assets/images/garfield-hands.png"
+import imgGarfield from "./../assets/images/garfield.png"
 
 export default {
   name: "HomePage",
@@ -33,7 +39,11 @@ export default {
       // cW: 0,
       // cH: 0,
       deviceType: "",
-      step: 1
+      step: 1,
+      img1: img1,
+      img2: img2,
+      imgGarfieldHands: imgGarfieldHands,
+      imgGarfield: imgGarfield,
     };
   },
   computed: {
