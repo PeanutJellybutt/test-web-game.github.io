@@ -75,6 +75,7 @@ export default {
         body.style.msTransform     = 'rotate('+this.deg+'deg)'; 
         body.style.oTransform      = 'rotate('+this.deg+'deg)'; 
         body.style.transform       = 'rotate('+this.deg+'deg)'; 
+        document.getElementById('body').classList.add("vertical");
       }
 
       // this.cW = document.getElementById("panel-bg-main").clientWidth;
