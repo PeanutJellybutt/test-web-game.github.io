@@ -4,19 +4,9 @@ body {
   padding: 0px;
   border: 0px;
   background: black;
-  /* background: rgb(1, 15, 58); */
-  
-  /* overflow: hidden; */
 }
 body.mobile.vertical {
-  width: 100vh;
-  height: 100vw;
   transform-origin: center;
-  position: absolute;
-  /* top: 27%; */
-  /* left: -52%; */
-  left: 0;
-  bottom: 0;
 }
 canvas {
   image-rendering: optimizeSpeed;
@@ -69,20 +59,17 @@ div.gm4html5_login_header
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(17, 0, 250);
+  /* background-color: rgb(17, 0, 250); */
 }
 .mobile.vertical .panel-wrap {
   width: 100vh;
   height: 100vw;
 }
 
-canvas {
-  /* position: absolute; */
-  /* transform: translate(-50%, -50%); */
-}
+canvas {}
 .parent-panel-bg-main {
   position: relative;
-  background-color: violet;
+  /* background-color: violet; */
   height: 100%;
   width: 100%;
 } 
@@ -95,10 +82,6 @@ canvas {
     height: calc(100vw / 16 * 9);
     width: 100%;
   } 
-  /* .mobile.vertical .parent-panel-bg-main.style-1 {
-    height: 100vw;
-    width: calc(100vw / 9 * 16);
-  }  */
   .mobile.vertical .parent-panel-bg-main.style-1 {
     width: 100vh;
     height: calc(100vh / 16 * 9);
@@ -130,11 +113,7 @@ canvas {
     width: calc(100% - 52%) !important;
     position: absolute;
   }
-  .mobile.vertical .canvas {
-    /* margin-top: 29.25%; */
-    /* height: 100vw;
-    width: calc(100vw / 9 * 16); */
-  }
+  .mobile.vertical .canvas {}
 
   .mobile .canvas {
     height: 100%;
