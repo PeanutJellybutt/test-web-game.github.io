@@ -4,7 +4,7 @@
     :class="['panel-wrap d-flex align-items-center justify-content-center']"
     @click="step = 2"
   >
-    <!-- <pre style="position: absolute;color: white;top: 0;left: 50%;background-color: black;z-index: 500;opacity: 1">
+    <!-- <pre style="position: absolute;color: white;top: 0;left: 0;background-color: black;z-index: 500;opacity: 1">
       {{step}} isVertical{{isVertical}} {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}}</pre> -->
     <div id="parent-panel-bg-main" :class="['parent-panel-bg-main d-block', myCustoms]">
       <div v-if="step == 1" class="panel-bg-greeting"></div>

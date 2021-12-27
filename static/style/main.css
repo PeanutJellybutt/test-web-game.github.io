@@ -112,7 +112,11 @@ div.gm4html5_login_header
     width: calc(100% - 52%) !important;
     position: absolute;
   }
-  .mobile.vertical .canvas {
+  .mobile.vertical .style-1 .canvas {
+    width: 100vh;
+    height: calc(100vh / 16 * 9);
+  }
+  .mobile.vertical .style-2 .canvas {
     height: 100vw;
     width: calc(100vw / 9 * 16);
   }
