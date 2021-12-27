@@ -4,8 +4,8 @@
     :class="['panel-wrap d-flex align-items-center justify-content-center']"
     @click="step = 2"
   >
-    <pre style="position: absolute;color: white;top: 0;left: 0;background-color: black;z-index: 500;opacity: 1">
-      {{step}} {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}}</pre>
+    <pre style="position: absolute;color: white;top: 0;left: 50%;background-color: black;z-index: 500;opacity: 1">
+      {{step}} {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}} {{iW / 16 * 9}}</pre>
     <div id="parent-panel-bg-main" :class="['parent-panel-bg-main d-block', myCustoms]">
       <div v-if="step == 1" class="panel-bg-greeting"></div>
       <b-img v-if="step == 1" id="img-char" :src="img1" width="200" />
@@ -55,7 +55,8 @@ export default {
       }
       else
       {
-        if(this.iW < this.iH) return 'style-1';
+        let w = this.iW / 16 * 9;
+        if(this.iH < w) return 'style-1';
         else return 'style-2';
       }
     }

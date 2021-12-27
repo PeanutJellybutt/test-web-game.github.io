@@ -13,8 +13,10 @@ body.mobile.vertical {
   height: 100vw;
   transform-origin: center;
   position: absolute;
-  top: 27%;
-  left: -52%;
+  /* top: 27%; */
+  /* left: -52%; */
+  left: 0;
+  bottom: 0;
 }
 canvas {
   image-rendering: optimizeSpeed;
@@ -98,8 +100,8 @@ canvas {
     width: calc(100vw / 9 * 16);
   } 
   .mobile .parent-panel-bg-main.style-2 {
-    width: calc(100vh / 9 * 16);
-    height: 100%;
+    height: calc(100vw / 16 * 9);
+    width: 100%;
   }
 
   .desktop .panel-bg-main {
