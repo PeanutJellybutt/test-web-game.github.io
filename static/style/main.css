@@ -113,11 +113,14 @@ canvas {}
     width: calc(100% - 52%) !important;
     position: absolute;
   }
-  .mobile.vertical .canvas {}
+  .mobile.vertical .canvas {
+    height: 100vw;
+    width: calc(100vw / 9 * 16);
+  }
 
   .mobile .canvas {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: calc(100vh / 9 * 16);
   }
 
   .panel-bg-greeting {

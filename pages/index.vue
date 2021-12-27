@@ -5,7 +5,7 @@
     @click="step = 2"
   >
     <!-- <pre style="position: absolute;color: white;top: 0;left: 50%;background-color: black;z-index: 500;opacity: 1">
-      {{step}} {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}}</pre> -->
+      {{step}} isVertical{{isVertical}} {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}}</pre> -->
     <div id="parent-panel-bg-main" :class="['parent-panel-bg-main d-block', myCustoms]">
       <div v-if="step == 1" class="panel-bg-greeting"></div>
       <b-img v-if="step == 1" id="img-char" :src="img1" width="200" />
