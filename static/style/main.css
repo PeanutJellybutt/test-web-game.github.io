@@ -95,10 +95,22 @@ canvas {
     height: calc(100vw / 16 * 9);
     width: 100%;
   } 
-  .mobile.vertical .parent-panel-bg-main.style-1 {
+  /* .mobile.vertical .parent-panel-bg-main.style-1 {
     height: 100vw;
     width: calc(100vw / 9 * 16);
-  } 
+  }  */
+  .mobile.vertical .parent-panel-bg-main.style-1 {
+    width: 100vh;
+    height: calc(100vh / 16 * 9);
+  }
+  .mobile.vertical .parent-panel-bg-main.style-2 {
+    width: calc(100vw / 9 * 16);
+    height: 100vw;
+  }
+  .mobile .parent-panel-bg-main.style-1 {
+    width: calc(100vh / 9 * 16);
+    height: 100vh;
+  }
   .mobile .parent-panel-bg-main.style-2 {
     height: calc(100vw / 16 * 9);
     width: 100%;
@@ -120,8 +132,13 @@ canvas {
   }
   .mobile.vertical .canvas {
     /* margin-top: 29.25%; */
-    height: 100vw;
-    width: calc(100vw / 9 * 16);
+    /* height: 100vw;
+    width: calc(100vw / 9 * 16); */
+  }
+
+  .mobile .canvas {
+    height: 100%;
+    width: 100%;
   }
 
   .panel-bg-greeting {

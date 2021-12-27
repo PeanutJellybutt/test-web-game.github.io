@@ -5,7 +5,7 @@
     @click="step = 2"
   >
     <pre style="position: absolute;color: white;top: 0;left: 50%;background-color: black;z-index: 500;opacity: 1">
-      {{step}} {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}} {{iW / 16 * 9}}</pre>
+      {{step}} {{$device.isDesktop}} {{deviceType}} iW{{iW}} iH{{iH}} {{myCustoms}} {{iH / 16 * 9}}</pre>
     <div id="parent-panel-bg-main" :class="['parent-panel-bg-main d-block', myCustoms]">
       <div v-if="step == 1" class="panel-bg-greeting"></div>
       <b-img v-if="step == 1" id="img-char" :src="img1" width="200" />
@@ -43,7 +43,8 @@ export default {
       img2: img2,
       imgGarfieldHands: imgGarfieldHands,
       imgGarfield: imgGarfield,
-      deg: 90
+      deg: 90,
+      isVertical: false
     };
   },
   computed: {
@@ -55,9 +56,16 @@ export default {
       }
       else
       {
-        let w = this.iW / 16 * 9;
-        if(this.iH < w) return 'style-1';
-        else return 'style-2';
+        if(this.isVertical) {
+          let h = this.iH / 16 * 9;
+          if(this.iW > h) return 'style-1';
+          else return 'style-2';
+        }
+        else {
+          let w = this.iW / 16 * 9;
+          if(this.iH > w) return 'style-2';
+          else return 'style-1';
+        };
       }
     }
   },
@@ -77,6 +85,7 @@ export default {
         body.style.oTransform      = 'rotate('+this.deg+'deg)'; 
         body.style.transform       = 'rotate('+this.deg+'deg)'; 
         document.getElementById('body').classList.add("vertical");
+        this.isVertical = true;
       }
 
       // this.cW = document.getElementById("panel-bg-main").clientWidth;
